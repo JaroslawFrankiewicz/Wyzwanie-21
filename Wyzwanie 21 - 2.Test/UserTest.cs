@@ -6,7 +6,7 @@ namespace Wyzwanie_21.Test
     {
 
         [Test]
-        public void sumOfTwoScoresTest()
+        public void SumOfTwoScoresTest()
         {
             // arrange
             var user = new User("Adam", "1234");
@@ -20,21 +20,21 @@ namespace Wyzwanie_21.Test
         }
 
         [Test]
-        public void sumOfThreeScoresTest()
+        public void SumOfThreeScoresTest()
         {
             // arrange
             var user = new User("Adam", "1234");
             user.AddScore(5);
             user.AddScore(6);
             user.AddScore(7);
-            
+
             // act
             var result = user.Result;
             // assert
             Assert.AreEqual(18, result);
         }
         [Test]
-        public void sumOfFourScoresTest()
+        public void SumOfFourScoresTest()
         {
             // arrange
             var user = new User("Adam", "1234");
@@ -48,5 +48,5 @@ namespace Wyzwanie_21.Test
             // assert
             Assert.AreEqual(0, result);
         }
-    } 
-} 
+    }
+}
