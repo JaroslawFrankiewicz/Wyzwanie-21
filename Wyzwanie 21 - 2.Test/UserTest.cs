@@ -2,7 +2,7 @@ using System.Reflection.Metadata;
 
 namespace Wyzwanie_21.Test
 {
-    public class Tests
+    public class UserTests
     {
 
         [Test]
