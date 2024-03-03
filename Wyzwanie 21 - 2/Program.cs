@@ -1,11 +1,18 @@
-﻿using Wyzwanie_21;
+﻿using System;
+using Wyzwanie_21;
 
-User user1 = new User("Adam", "1234");
-User user2 = new User("Monika", "5678");
-User user3 = new User("Zuzia", "9012");
-User user4 = new User("Damian", "3456");
+var employee = new Employee("Adam", "Kamizelich");
+employee.AddGrade(2);
+employee.AddGrade(5);
+employee.AddGrade(3);
+var statistics = employee.GetStatistics();
+Console.WriteLine($"Average: {statistics.Average:N2}");
+Console.WriteLine($"Min: {statistics.Min}");
+Console.WriteLine($"Max: {statistics.Max}");
+Console.WriteLine($"Sum: {statistics.Sum}");
 
-user1.AddScore(5);
-user1.AddScore(2);
-var result = user1.Result;
-Console.WriteLine("Użytkownik " + user1.Login + " z liczbą punktów: " +  result);
+//SetSth(out statistics);
+//void SetSth(out Statistics statistics)
+//{
+//    statistics = new Statistics();
+//}
