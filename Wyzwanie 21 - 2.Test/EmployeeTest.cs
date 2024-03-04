@@ -11,8 +11,8 @@ namespace Wyzwanie_21.Test
 
             var employee = new Employee("Adam", "Kamizelich");
             var statistics = new Statistics();
-            employee.AddGrade(1);
             employee.AddGrade(2);
+            employee.AddGrade(5);
             employee.AddGrade(3);
 
             // act
@@ -21,7 +21,7 @@ namespace Wyzwanie_21.Test
 
             // assert
 
-            Assert.AreEqual(3, result.Max);
+            Assert.AreEqual(5, result.Max);
 
         }
 
@@ -32,8 +32,8 @@ namespace Wyzwanie_21.Test
 
             var employee = new Employee("Adam", "Kamizelich");
             var statistics = new Statistics();
-            employee.AddGrade(1);
             employee.AddGrade(2);
+            employee.AddGrade(5);
             employee.AddGrade(3);
 
             // act
@@ -42,7 +42,7 @@ namespace Wyzwanie_21.Test
 
             // assert
 
-            Assert.AreEqual(1, result.Min);
+            Assert.AreEqual(2, result.Min);
 
         }
 
@@ -53,8 +53,8 @@ namespace Wyzwanie_21.Test
 
             var employee = new Employee("Adam", "Kamizelich");
             var statistics = new Statistics();
-            employee.AddGrade(1);
             employee.AddGrade(2);
+            employee.AddGrade(5);
             employee.AddGrade(3);
 
             // act
@@ -62,7 +62,7 @@ namespace Wyzwanie_21.Test
             var result = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual(2, result.Average);
+            Assert.AreEqual(Math.Round(3.33, 2), Math.Round(result.Average, 2));
 
         }
 
@@ -73,8 +73,8 @@ namespace Wyzwanie_21.Test
 
             var employee = new Employee("Adam", "Kamizelich");
             var statistics = new Statistics();
-            employee.AddGrade(1);
             employee.AddGrade(2);
+            employee.AddGrade(5);
             employee.AddGrade(3);
 
             // act
@@ -82,7 +82,7 @@ namespace Wyzwanie_21.Test
             var result = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual(6, result.Sum);
+            Assert.AreEqual(10, result.Sum);
 
         }
         private Employee GetEmployee(string name, string surname)

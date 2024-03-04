@@ -25,7 +25,49 @@ namespace Wyzwanie_21
 
         public void AddGrade(float grade)
         {
-            this.grades.Add(grade);
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else
+            {
+                Console.WriteLine("Invalid grade value");
+            }
+        }
+
+        public void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+            else
+            {
+                Console.WriteLine("String is not float");
+            }
+        }
+
+        public void Addgrade(double grade)
+        {
+            double gradeInDouble = (float)grade;
+            this.Addgrade(gradeInDouble);
+        }
+
+        public void Addgrade(int grade)
+        {
+            var gradeInInt = (float)grade;
+            this.Addgrade(gradeInInt);
+        }
+
+        public void AddGrade(long grade)
+        {
+            var gradeInLong = (float)grade;
+
+            if (gradeInLong >= 0 && gradeInLong <= 100)
+
+            {
+                this.AddGrade(gradeInLong);
+            }
         }
 
         public Statistics GetStatistics()
@@ -35,16 +77,16 @@ namespace Wyzwanie_21
             statistics.Max = float.MinValue;
             statistics.Min = float.MaxValue;
             statistics.Sum = 0;
-            
+
             foreach (var grade in this.grades)
-            {                
+            {
                 statistics.Max = Math.Max(statistics.Max, grade);
                 statistics.Min = Math.Min(statistics.Min, grade);
                 statistics.Average += grade;
                 statistics.Sum += grade;
             }
 
-            statistics.Average /= this.grades.Count; 
+            statistics.Average /= this.grades.Count;
             return statistics;
         }
     }
