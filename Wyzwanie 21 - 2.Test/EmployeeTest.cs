@@ -1,6 +1,4 @@
-﻿
-
-namespace Wyzwanie_21.Test
+﻿namespace Wyzwanie_21.Test
 {
     public class EmployeeTest
     {
