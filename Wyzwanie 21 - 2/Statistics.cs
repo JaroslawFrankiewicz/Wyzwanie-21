@@ -10,7 +10,7 @@ namespace Wyzwanie_21
 
         public float Average { get; set; }
 
-        public float Sum { get; set; }
+        public char AverageLetter { get; set; }
 
     }
 }
