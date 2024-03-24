@@ -11,9 +11,10 @@ namespace Wyzwanie_21.Test
 
             var employee = new Employee("Adam", "Kamizelich");
             var statistics = new Statistics();
-            employee.AddGrade(2);
-            employee.AddGrade(5);
-            employee.AddGrade(3);
+            employee.AddGrade('A');
+            employee.AddGrade('a');
+            employee.AddGrade(30);
+            employee.AddGrade(20);
 
             // act
 
@@ -21,7 +22,7 @@ namespace Wyzwanie_21.Test
 
             // assert
 
-            Assert.AreEqual(5, result.Max);
+            Assert.AreEqual(100, result.Max);
 
         }
 
@@ -32,9 +33,10 @@ namespace Wyzwanie_21.Test
 
             var employee = new Employee("Adam", "Kamizelich");
             var statistics = new Statistics();
-            employee.AddGrade(2);
-            employee.AddGrade(5);
-            employee.AddGrade(3);
+            employee.AddGrade('B');
+            employee.AddGrade('b');
+            employee.AddGrade(60);
+            employee.AddGrade(30);
 
             // act
 
@@ -42,7 +44,7 @@ namespace Wyzwanie_21.Test
 
             // assert
 
-            Assert.AreEqual(2, result.Min);
+            Assert.AreEqual(30, result.Min);
 
         }
 
@@ -53,38 +55,20 @@ namespace Wyzwanie_21.Test
 
             var employee = new Employee("Adam", "Kamizelich");
             var statistics = new Statistics();
-            employee.AddGrade(2);
-            employee.AddGrade(5);
-            employee.AddGrade(3);
+            employee.AddGrade('c');
+            employee.AddGrade('C');
+            employee.AddGrade(80);
+            employee.AddGrade(60);
 
             // act
 
             var result = employee.GetStatistics();
 
             // assert
-            Assert.AreEqual(Math.Round(3.33, 2), Math.Round(result.Average, 2));
+            Assert.AreEqual(Math.Round(65.00, 2), Math.Round(result.Average, 2));
 
         }
 
-        [Test]
-        public void WhenEmployeeCollectGrades_Getstatistics_ShouldReturnCorrectSumOfGrades()
-        {
-            // arrange
-
-            var employee = new Employee("Adam", "Kamizelich");
-            var statistics = new Statistics();
-            employee.AddGrade(2);
-            employee.AddGrade(5);
-            employee.AddGrade(3);
-
-            // act
-
-            var result = employee.GetStatistics();
-
-            // assert
-            Assert.AreEqual(10, result.Sum);
-
-        }
         private Employee GetEmployee(string name, string surname)
         {
             return new Employee(name, surname);
