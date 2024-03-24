@@ -69,6 +69,27 @@ namespace Wyzwanie_21.Test
 
         }
 
+        [Test]
+        public void WhenEmployeeCollectGrades_Getstatistics_ShouldReturnCorrectAverageLetter()
+        {
+            // arrange
+
+            var employee = new Employee("Adam", "Kamizelich");
+            var statistics = new Statistics();
+            employee.AddGrade('d');
+            employee.AddGrade('D');
+            employee.AddGrade(40);
+            employee.AddGrade(50);
+
+            // act
+
+            var result = employee.GetStatistics();
+
+            // assert
+            Assert.AreEqual('C', result.AverageLetter);
+
+        }
+
         private Employee GetEmployee(string name, string surname)
         {
             return new Employee(name, surname);
