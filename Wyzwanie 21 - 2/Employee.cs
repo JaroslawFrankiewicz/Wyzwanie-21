@@ -90,7 +90,7 @@
 
         public void AddGrade(int grade)
         {
-            var gradeInInt = grade;
+            var gradeInInt = (float)grade;
             this.AddGrade(gradeInInt);
         }
 

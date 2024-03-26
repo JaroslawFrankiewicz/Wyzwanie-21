@@ -8,6 +8,7 @@ Console.WriteLine();
 
 var employee = new Employee();
 
+
 while (true)
 {
     Console.WriteLine("Podaj kolejną ocenę pracownika");
