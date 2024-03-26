@@ -82,16 +82,16 @@
             }
         }
 
-        public void Addgrade(double grade)
+        public void AddGrade(double grade)
         {
             var gradeInDouble = (float)grade;
-            this.Addgrade(gradeInDouble);
+            this.AddGrade(gradeInDouble);
         }
 
-        public void Addgrade(int grade)
+        public void AddGrade(int grade)
         {
             var gradeInInt = grade;
-            this.Addgrade(gradeInInt);
+            this.AddGrade(gradeInInt);
         }
 
         public void AddGrade(long grade)
